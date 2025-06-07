@@ -7,6 +7,7 @@ include_directories(src)
 
 add_executable(virtual_pc
     src/main.c
+    src/emulator.c
     src/video_controller.c
     src/call_ret_example.c
 )

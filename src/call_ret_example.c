@@ -10,7 +10,7 @@ void load_call_ret_example() {
 
     uint32_t program[] = {
         0x0103000A, // MOV A, 10
-        0x32000010, // CALL 0x0010
+        0x3200000C, // CALL 0x000C
         0xFF000000, // HLT
         0x10230200, // ADD A, Z
         0x33000000  // RET
