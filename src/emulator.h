@@ -18,7 +18,7 @@ typedef struct {
 } MessageQueue;
 
 typedef struct {
-    uint32_t X, Y, Z, A;
+    uint32_t regs[4];  // X, Y, Z, A registers
     uint32_t PC;
     uint32_t SP;
     uint8_t STATUS;

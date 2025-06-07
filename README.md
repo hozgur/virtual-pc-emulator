@@ -1,17 +1,17 @@
 # Virtual PC Emulator
 
-Bu proje, 32-bit register ve 24-bit adresleme kullanan bir sanal CPU üzerine kurulu basit bir **virtual PC emülatörüdür**. Bellek haritası, I/O register'ları ve video çıkışı gibi temel sistem bileşenlerini içerir.
+This project is a **virtual PC emulator** built on a simple 32-bit register and 24-bit addressing CPU. It includes basic system components such as memory mapping, I/O registers, and video output.
 
-## 📦 İçerik
+## 📦 Contents
 
-- `emulator.h`: CPU ve mesajlaşma yapısı
-- `memory_map.h`: Bellek ve I/O adres tanımları
-- `video_controller.c`: Text-mode video belleği ve terminal çıktısı
-- `call_ret_example.c`: CALL & RET komutlarını örnekleyen program yükleyici
-- `main.c`: Programı başlatan ana fonksiyon
-- `CMakeLists.txt`: Derleme için CMake yapılandırması
+- `emulator.h`: CPU and messaging structure
+- `memory_map.h`: Memory and I/O address definitions
+- `video_controller.c`: Text-mode video memory and terminal output
+- `call_ret_example.c`: Program loader demonstrating CALL & RET instructions
+- `main.c`: Main function that starts the program
+- `CMakeLists.txt`: CMake configuration for building
 
-## 🔧 Derleme Talimatları
+## 🔧 Build Instructions
 
 ```bash
 mkdir build
@@ -21,28 +21,28 @@ make
 ./virtual_pc
 ```
 
-> Derlemek için `gcc` ve `cmake` kurulu olmalıdır.
+> You need `gcc` and `cmake` installed to build.
 
-## 🎮 Video Belleği
+## 🎮 Video Memory
 
-Text-mode video RAM belleği 80x25 boyutundadır. `video_render_text_terminal()` fonksiyonu terminale içerikleri yazdırır.
+The text-mode video RAM is 80x25 in size. The `video_render_text_terminal()` function prints the contents to the terminal.
 
-## 💻 Örnek Program
+## 💻 Example Program
 
-`call_ret_example.c` şu işlemleri yapar:
+`call_ret_example.c` performs the following operations:
 
-- A register'ına `10` yükler
-- Subroutine'e `CALL` eder
-- Alt program `Z` ile `A`'yı toplar (`Z = 5`)
-- `RET` komutu ile geri döner
-- `HLT` komutu ile işlemci durur
+- Loads `10` into register A
+- Calls a subroutine
+- The subroutine adds `Z` to `A` (`Z = 5`)
+- Returns with the `RET` instruction
+- Stops the processor with the `HLT` instruction
 
-Çıktı olarak:
+Output:
 ```
-Program çalıştırılıyor...
-Program sona erdi. A = 15
+Program is running...
+Program ended. A = 15
 ```
 
 ---
 
-© 2025 Hakan Özgür. Tüm hakları saklıdır.
+© 2025 Hakan Özgür. All rights reserved.
