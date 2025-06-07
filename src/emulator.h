@@ -2,7 +2,11 @@
 #define EMULATOR_H
 
 #include <stdint.h>
+#ifdef _WIN32
+typedef struct { int unused; } pthread_mutex_t;
+#else
 #include <pthread.h>
+#endif
 
 #define MEM_SIZE (1 << 24)
 #define CORE_COUNT 2
